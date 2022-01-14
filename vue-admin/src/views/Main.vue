@@ -1,5 +1,5 @@
 <template>
-  <el-container style="height: 100%">
+  <el-container style="height: 100vh">
     <el-aside width="auto"><common-aside></common-aside></el-aside>
     <el-container>
       <el-header><common-header></common-header></el-header>

@@ -5,7 +5,8 @@
            text-color="#fff"
            active-text-color="#ffd04b"
            >
-    <h3>通用后台管理系统</h3>
+    <h3 v-show="!isCollapse">通用后台管理系统</h3>
+    <h3 v-show="isCollapse">后台</h3>
     <el-menu-item :index="item.path"
                   v-for="item in noChildren"
                   :key="item.path" @click="clickMenu(item)">
@@ -26,10 +27,10 @@
     </el-submenu>
   </el-menu>
 </template>
-<style scoped>
-.el-menu-vertical-demo:not(.el-menu--collapse) {
+<style>
+.el-menu-vertical-demo {
   width: 200px;
-  min-height: 400px;
+  height: 100%;
 }
 </style>
 
