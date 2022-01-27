@@ -19,7 +19,7 @@
         <span slot="title">{{item.label}}</span>
       </template>
       <el-menu-item-group>
-        <el-menu-item :index="subItem.path" v-for="(subItem,subIndex) in item.children" :key="subIndex" @click="clickMenu(item)">
+        <el-menu-item :index="subItem.path" v-for="(subItem,subIndex) in item.children" :key="subIndex" @click="clickMenu(subItem)">
           <i :class="'el-icon-' + subItem.icon"></i>
           <span slot="title">{{subItem.label}}</span>
         </el-menu-item>
@@ -27,14 +27,24 @@
     </el-submenu>
   </el-menu>
 </template>
-<style>
-.el-menu-vertical-demo {
+<style lang="scss" scoped>
+.el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 200px;
+  min-height: 400px;
+}
+.el-menu {
   height: 100%;
+  border: none;
+  h3 {
+    color: #fff;
+    text-align: center;
+    line-height: 48px
+  }
 }
 </style>
 
 <script>
+
 export default {
   data () {
     return {
@@ -85,7 +95,10 @@ export default {
   },
   methods: {
     clickMenu (item) {
-      this.$router.push({ name: item.name })
+      this.$router.push({
+        name: item.name
+      })
+      this.$store.commit('selectMenu', item)
     }
   },
   computed: {
