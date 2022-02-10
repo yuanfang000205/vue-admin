@@ -27,24 +27,7 @@
     </el-submenu>
   </el-menu>
 </template>
-<style lang="scss" scoped>
-.el-menu-vertical-demo:not(.el-menu--collapse) {
-  width: 200px;
-  min-height: 400px;
-}
-.el-menu {
-  height: 100%;
-  border: none;
-  h3 {
-    color: #fff;
-    text-align: center;
-    line-height: 48px
-  }
-}
-</style>
-
 <script>
-
 export default {
   data () {
     return {
@@ -114,3 +97,18 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+.el-menu-vertical-demo:not(.el-menu--collapse) {
+  width: 200px;
+  min-height: 400px;
+}
+.el-menu {
+  height: 100%;
+  border: none;
+  h3 {
+    color: #fff;
+    text-align: center;
+    line-height: 48px
+  }
+}
+</style>

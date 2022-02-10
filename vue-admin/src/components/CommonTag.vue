@@ -49,7 +49,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .tag {
     padding: 20px;
     text-align: left;

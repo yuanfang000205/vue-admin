@@ -12,6 +12,16 @@ Vue.use(ElementUI)
 Vue.prototype.$http = http
 
 if (process.env.NODE_ENV === 'development') require('@/api/mock')
+
+router.beforeEach((to, from, next) => {
+  store.commit('getToken')
+  const token = store.state.user.token
+  if (!token && to.name !== 'login') {
+    next({ name: 'login' })
+  } else {
+    next()
+  }
+})
 new Vue({
   router,
   store,
