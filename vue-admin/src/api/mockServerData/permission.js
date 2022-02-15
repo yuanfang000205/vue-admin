@@ -12,25 +12,25 @@ export default {
         data: {
           menu: [
             {
-              path: '/',
+              path: '/home',
               name: 'home',
               label: '首页',
               icon: 's-home',
-              url: 'Home/Home'
+              url: 'home/index'
             },
             {
               path: '/mall',
               name: 'mall',
               label: '商品管理',
               icon: 'video-play',
-              url: 'Mall/Mall'
+              url: 'mall/index'
             },
             {
               path: '/user',
               name: 'user',
               label: '用户管理',
               icon: 'user',
-              url: 'User/User'
+              url: 'user/index'
             },
             {
               label: '其他',
@@ -41,14 +41,14 @@ export default {
                   name: 'page1',
                   label: '页面1',
                   icon: 'setting',
-                  url: 'Other/PageOne'
+                  url: 'other/pageOne.vue'
                 },
                 {
                   path: '/page2',
                   name: 'page2',
                   label: '页面2',
                   icon: 'setting',
-                  url: 'Other/PageTwo'
+                  url: 'other/pageTwo.vue'
                 }
               ]
             }
@@ -67,14 +67,14 @@ export default {
               name: 'home',
               label: '首页',
               icon: 's-home',
-              url: 'Home/Home'
+              url: 'home/index'
             },
             {
               path: '/video',
               name: 'video',
               label: '商品管理',
               icon: 'video-play',
-              url: 'VideoManage/VideoManage'
+              url: 'mall/index'
             }
           ],
           token: Mock.Random.guid(),

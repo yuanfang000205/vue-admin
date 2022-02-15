@@ -18,6 +18,8 @@ router.beforeEach((to, from, next) => {
   const token = store.state.user.token
   if (!token && to.name !== 'login') {
     next({ name: 'login' })
+  } else if (token && to.name === 'login') {
+    next({ name: 'home' })
   } else {
     next()
   }
@@ -25,5 +27,8 @@ router.beforeEach((to, from, next) => {
 new Vue({
   router,
   store,
-  render: h => h(App)
+  render: h => h(App),
+  created () {
+    store.commit('addMenu', router)
+  }
 }).$mount('#app')
